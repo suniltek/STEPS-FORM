@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.selectpicker').selectpicker({
+            style: 'btn-default',
+            size: 4
+        });
+    });
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="stepwizard">
+                <div class="stepwizard-row setup-panel">
+                    <div class="stepwizard-step col-xs-3">
+                        <a href="#step-1" type="button" class="btn btn-success btn-circle">1</a>
+                        <p><small>INFO</small></p>
+                    </div>
+                    <div class="stepwizard-step col-xs-2">
+                        <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                        <p><small>SYMPTOMS</small></p>
+                    </div>
+                    <div class="stepwizard-step col-xs-2">
+                        <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                        <p><small>CHOICES</small></p>
+                    </div>
+                    <div class="stepwizard-step col-xs-2">
+                        <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
+                        <p><small>DISEASE</small></p>
+                    </div>
+                    <div class="stepwizard-step col-xs-3">
+                        <a href="#step-5" type="button" class="btn btn-default btn-circle" disabled="disabled">5</a>
+                        <p><small>DETAILS</small></p>
+                    </div>
+                </div>
+            </div>
+            <form role="form">
+                <div class="panel panel-primary setup-content" id="step-1">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Personal Info</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row form-wrapper-center">
+                             <div class="col-sm-5">
+                                <div class="form-group form-center">
+                                    <label class="control-label">Name</label>
+                                    <input type="text" required="required" class="form-control"/>
+                                </div>        
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group form-center">
+                                    <label class="control-label">Age</label>
+                                    <input maxlength="2" type="text" required="required" class="form-control"/>
+                                </div>        
+                            </div>
+                            <div class="col-sm-5">
+                                <div class="form-group form-center">
+                                    <label class="control-label">Gender</label><br />
+                                    <button type="button" class="btn btn-default btn-gender" required="required">Male</button>
+                                    <button type="button" class="btn btn-default btn-gender" required="required">Female</button>
+                                </div>    
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary setup-content" id="step-2">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Choose Symptoms</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row form-wrapper-center">
+                            <div class="col-sm-8">
+                                <div class="form-group form-center">
+                                    <label class="control-label">Select the Symptoms from drop down list</label>
+                                    <select name="sel_cat" id="sel_cat" class="selectpicker" multiple data-selected-text-format="count > 3" data-actions-box="true">
+								        <option value="bloating">bloating</option>
+								        <option value="cough">cough</option>
+								        <option value="diarrhea">diarrhea</option>
+								        <option value="dizziness">dizziness</option>
+								        <option value="fatigue">fatigue</option>
+								        <option value="fever">fever</option>
+								        <option value="headache">headache</option>
+								        <option value="muscle cramp">muscle cramp</option>
+								        <option value="nausea">nausea</option>
+								        <option value="throat irritation">throat irritation</option>
+								    </select>
+                                </div>        
+                            </div>
+                        </div>
+                        <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary setup-content" id="step-3">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Choices</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row form-wrapper-center">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <label class="choice-no">1</label> &nbsp; 
+                                        <input type="radio" name="choices"> &nbsp; cold sweats
+                                    </li>
+                                    <li class="list-group-item">
+                                        <label class="choice-no">2</label> &nbsp; 
+                                        <input type="radio" name="choices"> &nbsp; cough
+                                    </li>
+                                    <li class="list-group-item">
+                                        <label class="choice-no">3</label> &nbsp; 
+                                        <input type="radio" name="choices"> &nbsp; recurring fever
+                                    </li>
+                                    <li class="list-group-item">
+                                        <label class="choice-no">4</label> &nbsp; 
+                                        <input type="radio" name="choices"> &nbsp; bloating
+                                    </li>
+                                    <li class="list-group-item">
+                                        <label class="choice-no">5</label> &nbsp; 
+                                        <input type="radio" name="choices"> &nbsp; diarrhea
+                                    </li>
+                                    <li class="list-group-item">
+                                        <label class="choice-no">6</label> &nbsp; 
+                                        <input type="radio" name="choices"> &nbsp; dizziness
+                                    </li>
+                                </ul> 
+                            </div>
+                        </div>    
+                        <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary setup-content" id="step-4">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Probable Disease</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row form-wrapper-center">
+                            <div class="col-sm-6 col-sm-offset-3">
+                                <div class="list-group">
+                                    <a class="list-group-item" href="">
+                                        <label class="choice-no">1</label> &nbsp; 
+                                        Influenza(flu)
+                                        <span class="badge badge-success pull-right" style="font-size:11px;">45%</span>
+                                    </a>
+                                    <a class="list-group-item" href="">
+                                        <label class="choice-no">2</label> &nbsp; 
+                                        Common Cold
+                                        <span class="badge badge-success pull-right" style="font-size:11px;">32%</span>
+                                    </a>
+                                    <a class="list-group-item" href="">
+                                        <label class="choice-no">3</label> &nbsp; 
+                                        Acute Sinusitis
+                                        <span class="badge badge-success pull-right" style="font-size:11px;">28%</span>
+                                    </a>
+                                    <a class="list-group-item" href="">
+                                        <label class="choice-no">4</label> &nbsp; 
+                                        Viral pnueumonia
+                                        <span class="badge badge-success pull-right" style="font-size:11px;">20%</span>
+                                    </a>
+                                    <a class="list-group-item" href="">
+                                        <label class="choice-no">5</label> &nbsp; 
+                                        Viral gastroenteritis
+                                        <span class="badge badge-success pull-right" style="font-size:11px;">16%</span>
+                                    </a>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel panel-primary setup-content" id="step-5">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Disease Details</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">General Information</div>
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <label class="col-xs-3 text-info">Name: </label>
+                                            <label class="col-xs-9" style="font-weight:500;color:#2a2a2a">Loreum Epsum</label>
+                                            <div class="clearfix"></div>
+                                            <label class="col-xs-3 text-info">Age: </label>
+                                            <label class="col-xs-9" style="font-weight:500;color:#2a2a2a">26</label>
+                                            <div class="clearfix"></div>
+                                            <label class="col-xs-3 text-info">Gender: </label>
+                                            <label class="col-xs-9" style="font-weight:500;color:#2a2a2a">Male</label>   
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">Symptoms</div>
+                                    <div class="panel-body">
+                                        <span class="label label-default">bloating</span>
+                                        <span class="label label-default">cough</span>
+                                        <span class="label label-default">dizziness</span>
+                                        <span class="label label-default">fever</span>
+                                        <span class="label label-default">muscle cramp</span>
+                                    </div>
+                                </div>    
+                            </div> 
+                            <div class="clearfix">&nbsp;</div>
+                            <div class="col-sm-6">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">Symptom that bothers most </div>
+                                    <div class="panel-body">
+                                        <span class="label label-warning">dizziness</span>
+                                        <span class="label label-warning">fever</span>
+                                        <span class="label label-warning">muscle cramp</span>
+                                    </div>
+                                </div>    
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">Proable Disease</div>
+                                    <div class="panel-body">
+                                        <span class="label label-danger">Influenza(flu)</span>
+                                        <span class="label label-danger">Common Cold</span>
+                                        <span class="label label-danger">Acute Sinusitis</span>
+                                        <span class="label label-danger">Viral pnueumonia</span>
+                                    </div>
+                                </div>    
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </form>    
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
